@@ -1,0 +1,22 @@
+import mysql.connector
+
+db = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='dbmahasiswa'
+)
+
+cursor = db.cursor()
+
+sql = """
+CREATE TABLE IF NOT EXISTS mahasiswa (
+    NIM CHAR(10) PRIMARY KEY,
+    NAMA VARCHAR(50),
+    ALAMAT VARCHAR(50),
+    TELEPON VARCHAR(12),
+    JURUSAN VARCHAR(30)
+);
+"""
+cursor.execute(sql)
+
